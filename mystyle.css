@@ -5,6 +5,15 @@ body {
     background-position: center;
     background-attachment: fixed;
 }
+#sidebar-active {
+    display: none;
+}
+#sidebar-active:checked ~ .open-sidebar-button {
+     display: none;
+}
+#sidebar-active:checked ~ .links-container {
+    left: 0;
+}
 h1 {
     font-family: 'Orbitron', Consolas, 'Courier New', monospace;
     font-weight: normal;
@@ -21,14 +30,25 @@ div {
     flex-direction: column;
     gap: 2rem;
     border-left: 1px solid white;
-    border-spacing: 3px;
 
 }
 a {
     color: white; 
     height: auto;
+    padding: 0.5em 0.75em;
+    transition: background-color 0.2s;
     padding-left: 1.5rem;  
     text-decoration: none;
+}
+a:hover {
+    background-color: rgba(36, 36, 48, 0.932);
+    border-radius: 0.5em;
+}
+a.active {
+    text-decoration: underline;
+    text-underline-offset: 0.4em;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.6em;
 }
 .links-container {
     position: fixed;
@@ -37,8 +57,28 @@ a {
     flex-direction: column;
     gap: 2rem;
     top: 0;
-    left: 0;
-    height: 120vh;
+    left: -100%;
+    transition: left 0.4s ease;
+    height: 100vh;
     width: 50%;
     background-color: rgb(31 31 47 / 0.3);
+}
+.open-sidebar-button{
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+
+}
+.close-side-button{
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+}
+footer {
+    font-family: 'Orbitron', Consolas, 'Courier New', monospace;
+    color: white;
+    text-align: center;
+    position: fixed;
 }
