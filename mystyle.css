@@ -38,11 +38,25 @@ h2 {
     color: white;
     text-align: center;
     padding: 0.6em 6em;
+    offset: 50em;
 }
 .more-button {
     display: flex;
     align-items: center;
     gap: 1rem;    
+}
+.button-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: min(90%, 560px);
+}
+.button-row::before,
+.button-row::after {
+    content: "";
+    height: 1px;
+    background-color: white;
+    flex: 1;
 }
 .wordmark {
     position: relative;
