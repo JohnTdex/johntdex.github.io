@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="script.js" defer></script>
 		<link rel="stylesheet" href="mystyle.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +12,7 @@
 		
 	</head>
 	<body>
-		<h1>L18th</h1>
+		<h1 class="wordmark">L18th</h1>
 		<nav>
 			<input type="checkbox" id="sidebar-active">
 			<label for="sidebar-active" class="open-sidebar-button">
@@ -24,15 +25,28 @@
 				<div class="nav-links">
 
 				<a href="index.html" class="active">Home</a>
-				<a href="./pages/gallery.html" class="active">Gallery</a>
-				<a href="#" class="active">Minecraft Mods</a>
-				<a href="#" class="active">Blog</a>
+				<a href="#">Gallery</a>
+				<a href="#">Minecraft Mods</a>
+				<a href="#">Blog</a>
 				</div>
 
 				
 			</div>
 		</nav>
-		<footer
+		<main>
+			<section id="home">
+
+			</section>
+
+			<section id="gallery-preview">
+				<h2>Gallery</h2>
+				<div class="art-frame">
+					<img src="artworks/Sunset.webp" alt="Sunset Character from The Seeker webcomic.">
+					<a href="pages/gallery.html" class="more-button">Artwork Page</a>
+				</div>
+			</section>
+		</main>
+		<footer>
 			© JohnTdex / Lyron18th
 		</footer>
 	</body>

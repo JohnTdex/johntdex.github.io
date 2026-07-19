@@ -4,6 +4,10 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
 }
 #sidebar-active {
     display: none;
@@ -20,6 +24,51 @@ h1 {
     color: white;
     text-align: center;
     letter-spacing: 0.2cm;
+}
+h2 {
+    font-family: 'Orbitron', Consolas, 'Courier New', monospace;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.2cm;
+}
+.more-button {
+    font-family: 'Orbitron', Consolas, 'Courier New', monospace;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    padding: 0.6em 6em;
+}
+.more-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;    
+}
+.wordmark {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0 1em 0.35em;
+    border-bottom: 1px solid white;
+}
+.wordmark::before,
+.wordmark::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wordmark::before {
+    bottom: -0.45em;
+    width: 60%;
+}
+
+.wordmark::after {
+    bottom: -0.9em;
+    width: 30%;
 }
 div {
     font-family: 'Orbitron', Consolas, 'Courier New', monospace;
@@ -45,11 +94,26 @@ a:hover {
     border-radius: 0.5em;
 }
 a.active {
-    text-decoration: underline;
-    text-underline-offset: 0.4em;
-    border-bottom: 1px solid white;
-    padding-bottom: 0.6em;
+    position: relative;
 }
+a.active::before,
+a.active::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: white;
+}
+a.active::before {
+    left: 0.2rem;
+    bottom: -0.2rem;
+    width: 120px;
+}
+a.active::after {
+    left: 1.5rem;
+    bottom: -0.7em;
+    width: 120px;
+}
+
 .links-container {
     position: fixed;
     padding: 1.5rem;
@@ -63,6 +127,8 @@ a.active {
     width: 50%;
     background-color: rgb(31 31 47 / 0.3);
 }
+.links-container { z-index: 10; }
+.open-sidebar-button { z-index: 10; }
 .open-sidebar-button{
     position: fixed;
     top: 1rem;
@@ -78,7 +144,95 @@ a.active {
 }
 footer {
     font-family: 'Orbitron', Consolas, 'Courier New', monospace;
-    color: white;
+    margin-top: auto;
+    padding: 1rem;
     text-align: center;
-    position: fixed;
+    font-size: 0.8rem;
+    color: white;
+    
+}
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+#gallery-preview h2 {
+    left: 0;
+    width: 100%;
+    transform: none;
+    text-align: center;
+    background-color: rgb(0 0 0 / 0.35);
+    padding: 1em 0;
+}
+#gallery-preview {
+    position: relative;
+}
+#gallery-preview h2 {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#gallery-preview::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("artworks/unbound.webp");
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.4s ease;
+}
+#gallery-preview:has(.art-frame:hover, .more-button:hover)::before {
+    filter: blur(6px);
+    transform: scale(1.04);
+}
+.art-frame {
+    position: relative;
+    width: min(80vw, 420px);
+}
+
+.art-frame img {
+    width: 100%;
+    display: block;
+    border: 1px solid white;
+}
+
+.art-frame::before,
+.art-frame::after {
+    content: "";
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 0;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+.art-frame::before {
+    top: -0.6rem;
+    left: -0.6rem;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.art-frame::after {
+    bottom: -0.6rem;
+    right: -0.6rem;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.art-frame:hover::before,
+.art-frame:hover::after {
+    opacity: 1;
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (min-width: 768px) {
+    /* rules here apply ONLY on screens 768px or wider */
 }
