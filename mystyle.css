@@ -1,4 +1,44 @@
 body {
     background-image: url("artworks/8\ -\ Copy.png");
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+h1 {
+    font-family: 'Orbitron', Consolas, 'Courier New', monospace;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.2cm;
+}
+div {
+    font-family: 'Orbitron', Consolas, 'Courier New', monospace;
+    color: white;
+}
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-left: 1px solid white;
+    border-spacing: 3px;
+
+}
+a {
+    color: white; 
+    height: auto;
+    padding-left: 1.5rem;  
+    text-decoration: none;
+}
+.links-container {
+    position: fixed;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    top: 0;
+    left: 0;
+    height: 120vh;
+    width: 50%;
+    background-color: rgb(31 31 47 / 0.3);
 }

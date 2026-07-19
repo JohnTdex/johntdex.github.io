@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8"
-		<meta name="viewport", content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="mystyle.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 		<title> Home </title>
+		
 	</head>
 	<body>
-		<div class="left side">
-			<div>
-				Home
+		<h1>L18th</h1>
+		<nav>
+			<input type="checkbox" id="sidebar-active">
+			<label for="sidebar-active" class="open-sidebar-button">
+				<svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+			</label>
+			<div class="links-container">
+				<label for="sidebar-active" class="close-side-buttoon">
+					<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+				</label>
+				<div class="nav-links">
+
+				<a href="index.html">Home</a>
+				<a href="./pages/gallery.html">Gallery</a>
+				<a href="#">Minecraft Mods</a>
+				<a href="#">Blog</a>
+				</div>
+
+				
 			</div>
-			<div>
-				Gallery
-			</div>
-			<div>
-				Mods
-			</div>
-			<div>
-				My blog
-			</div>
-		</div>
+		</nav>
 	</body>
 </html>
