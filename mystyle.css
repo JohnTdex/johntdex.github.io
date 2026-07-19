@@ -21,6 +21,14 @@ body {
 #sidebar-active:checked ~ .links-container {
     left: 0;
 }
+#sidebar-active:checked ~ #overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
 h1 {
     font-family: 'Orbitron', Consolas, 'Courier New', monospace;
     font-weight: normal;
@@ -96,46 +104,7 @@ div {
     font-family: 'Orbitron', Consolas, 'Courier New', monospace;
     color: white;
 }
-.nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    border-left: 1px solid white;
-
-}
-a {
-    color: white; 
-    height: auto;
-    padding: 0.5em 0.75em;
-    transition: background-color 0.2s;
-    text-decoration: none;
-}
-.nav-links a:hover {
-    background-color: rgb(187, 214, 255, 0.3);
-    border-radius: 0.5em;
-}
-a.active {
-    position: relative;
-}
-a.active::before,
-a.active::after {
-    content: "";
-    position: absolute;
-    height: 1px;
-    background-color: white;
-}
-a.active::before {
-    left: 0.2rem;
-    bottom: -0.2rem;
-    width: 120px;
-}
-a.active::after {
-    left: 1.5rem;
-    bottom: -0.7em;
-    width: 120px;
-}
-
-.links-container {
+    .links-container {
     position: fixed;
     padding: 1.5rem;
     display: flex;
@@ -158,19 +127,8 @@ a.active::after {
 
 }
 .close-side-button{
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
+    align-self: flex-end;
     cursor: pointer;
-}
-footer {
-    font-family: 'Orbitron', Consolas, 'Courier New', monospace;
-    margin-top: auto;
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.8rem;
-    color: white;
-    
 }
 section {
     min-height: 100vh;
@@ -180,6 +138,53 @@ section {
     align-items: center;
     gap: 2rem;
     padding: 2rem;
+}
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-left: 1px solid white;
+
+}
+.nav-links a:hover {
+    background-color: rgb(187, 214, 255, 0.3);
+    border-radius: 0.5em;
+}
+a {
+    color: white; 
+    height: auto;
+    padding: 0.5em 0.75em;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+a.active {
+    position: relative;
+}
+a.active::before,
+a.active::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: white;
+}
+a.active::before {
+    left: 0.2rem;
+    bottom: -0.2rem;
+    width: 120px;
+}
+a.active::after {
+    left: 1.5rem;
+    bottom: -0.7em;
+    width: 120px;
+}
+footer {
+    font-family: 'Orbitron', Consolas, 'Courier New', monospace;
+    margin-top: auto;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+    
 }
 #gallery-preview h2 {
     left: 0;
@@ -253,7 +258,23 @@ section {
     width: 3rem;
     height: 3rem;
 }
-
 @media (min-width: 768px) {
-    /* rules here apply ONLY on screens 768px or wider */
+    /* rules here apply ONLY on screens 375px or wider */
+    .open-sidebar-button,
+    .close-side-button,
+    #overlay {
+        display: none;
+    }
+    .links-container {
+        left: 0;
+        width: 230px;
+        background-color: rgb(31 31 47 / 0.25);
+    }
+    section {
+        padding-left: 230px;
+        padding-right: 230px;
+    }
+    .art-frame {
+        width: min(100%, 420px);
+    }
 }
