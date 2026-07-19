@@ -36,23 +36,28 @@ h2 {
     font-family: 'Orbitron', Consolas, 'Courier New', monospace;
     font-weight: normal;
     color: white;
-    text-align: center;
     padding: 0.6em 6em;
     offset: 50em;
-}
-.more-button {
+    text-align: center;
+    white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 1rem;    
+    background-color: rgba(42, 42, 65, 0.7);
+    border-radius: 0.5em;
 }
-.button-row {
+.more-button:hover {
+    background-color: rgba(31, 31, 47, 1);
+    border-radius: 0.5em;
+}
+.box-button {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    width: min(90%, 560px);
+    gap: 0.25rem;
+    width: 100%;
+    margin: 0 -2em;
 }
-.button-row::before,
-.button-row::after {
+.box-button::before,
+.box-button::after {
     content: "";
     height: 1px;
     background-color: white;
@@ -100,11 +105,10 @@ a {
     height: auto;
     padding: 0.5em 0.75em;
     transition: background-color 0.2s;
-    padding-left: 1.5rem;  
     text-decoration: none;
 }
-a:hover {
-    background-color: rgba(36, 36, 48, 0.932);
+.nav-links a:hover {
+    background-color: rgb(187, 214, 255, 0.3);
     border-radius: 0.5em;
 }
 a.active {
@@ -139,7 +143,7 @@ a.active::after {
     transition: left 0.4s ease;
     height: 100vh;
     width: 50%;
-    background-color: rgb(31 31 47 / 0.3);
+    background-color: rgba(31, 31, 47, 0.856);
 }
 .links-container { z-index: 10; }
 .open-sidebar-button { z-index: 10; }
