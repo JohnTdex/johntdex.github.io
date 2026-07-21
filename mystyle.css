@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 :root {
     color-scheme: dark;
 }
@@ -229,15 +232,13 @@ footer {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1em 0;
-}
-#gallery-preview {
-    position: relative;
-}
-#gallery-preview h2 {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+}
+#gallery-preview {
+    position: relative;
 }
 #gallery-preview::before {
     content: "";
@@ -320,6 +321,7 @@ footer {
     background-position: center;
     transition: filter 0.4s ease;  
 }
+section { outline: 2px solid red; }
 @media (min-width: 768px) {
     /* rules here apply ONLY on screens 375px or wider */
     .open-sidebar-button,
