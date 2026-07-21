@@ -43,14 +43,28 @@ h1 {
     text-align: center;
     letter-spacing: 0.2cm;
 }
-h2 {
+#gallery-preview h2 {
     font-family: 'Orbitron', Consolas, 'Courier New', monospace;
     font-weight: normal;
     color: white;
     text-align: center;
     letter-spacing: 0.2cm;
 }
-h3 {
+#mod-page h2 {
+    font-family: 'Orbitron', Consolas, 'Courier New', monospace;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.2cm;
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 0.5cm;
+    
+}
+#blog-page h2 {
     font-family: 'Orbitron', Consolas, 'Courier New', monospace;
     font-weight: normal;
     color: white;
@@ -292,6 +306,19 @@ footer {
     background-size: cover;
     background-position: center;
     transition: filter 0.4s ease;
+}
+#blog-page {
+    position: relative;
+}
+#blog-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("artworks/Devourer.webp");
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.4s ease;  
 }
 @media (min-width: 768px) {
     /* rules here apply ONLY on screens 375px or wider */
