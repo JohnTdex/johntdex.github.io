@@ -321,7 +321,6 @@ footer {
     background-position: center;
     transition: filter 0.4s ease;  
 }
-section { outline: 2px solid red; }
 @media (min-width: 768px) {
     /* rules here apply ONLY on screens 375px or wider */
     .open-sidebar-button,
